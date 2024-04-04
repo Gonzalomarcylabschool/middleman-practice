@@ -4,7 +4,7 @@ import fetchData from './utils/fetchData'
 import './App.css'
 
 function App() {
-  const [poke, setPoke] = useState(0)
+  const [poke, setPoke] = useState()
 
   useEffect(() => {
     // fetch to middleman server
@@ -13,7 +13,7 @@ function App() {
       try {
         const [data, error] = await fetchData(API_URL);
 
-        if (data.results) setPoke(data.results[0]);
+        if (data.results) setPoke(data.results[1]);
       } catch (error) {
         console.log(error.message)
       }

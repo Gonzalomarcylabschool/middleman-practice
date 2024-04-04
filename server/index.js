@@ -1,9 +1,10 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const fetchData = require('../server/utils/fetchData.js');
 
 const app = express();
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 const pathToDist = path.join(__dirname, '..', 'app', 'dist');
 
